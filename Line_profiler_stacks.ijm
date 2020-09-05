@@ -6,7 +6,6 @@ label =  getTitle();// getMetadata("Label");
 split_here = indexOf(label, "MMStack");
 save_name = substring(label,0,split_here);
 
-save_name
 print(label);
 
 print(save_name);
