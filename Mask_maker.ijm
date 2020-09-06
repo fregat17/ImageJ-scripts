@@ -14,7 +14,7 @@ saveAs("PNG", output_folder + label + ".png");
 
 roiManager("Deselect");
 roiManager("Combine");
-run("Set...", "value=255");
+run("Set...", "value=1");
 run("Make Inverse");
 run("Set...", "value=0");
 roiManager("Deselect");
