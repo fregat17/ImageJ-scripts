@@ -19,10 +19,11 @@ run("Make Inverse");
 run("Set...", "value=0");
 roiManager("Deselect");
 run("Convert to Mask");
+setMinAndMax(0, 255);
 
 roiManager("Save", rois_folder  + label + "_RoiSet.zip");
 mask_name = label + "_P" + ".png"
-saveAs("PNG", mask_folder + label + "_P" + ".png");
+saveAs("PNG", mask_folder + mask_name);
 
 roiManager("Delete");
 selectWindow(mask_name);
