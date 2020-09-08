@@ -9,7 +9,8 @@ rois_folder = path + "rois/"
 title =  getTitle();
 parts = split(title, ".");
 label = parts[0]
-
+run("8-bit");
+setMinAndMax(0, 255);
 saveAs("PNG", output_folder + label + ".png");
 
 roiManager("Deselect");
@@ -18,8 +19,8 @@ run("Set...", "value=1");
 run("Make Inverse");
 run("Set...", "value=0");
 roiManager("Deselect");
-run("Convert to Mask");
 setMinAndMax(0, 255);
+run("Grays");
 
 roiManager("Save", rois_folder  + label + "_RoiSet.zip");
 mask_name = label + "_P" + ".png"
