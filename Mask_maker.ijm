@@ -1,6 +1,6 @@
 macro "3_3" {
 
-path = "?" //set path
+path = "C:/FASTAI/MPP8/new_processed_train_data/" //set path
 
 output_folder = path + "images/"
 mask_folder = path + "masks/"
@@ -9,8 +9,8 @@ rois_folder = path + "rois/"
 title =  getTitle();
 parts = split(title, ".");
 label = parts[0]
-run("8-bit");
 setMinAndMax(0, 255);
+run("8-bit");
 saveAs("PNG", output_folder + label + ".png");
 
 roiManager("Deselect");
