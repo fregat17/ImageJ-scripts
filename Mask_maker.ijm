@@ -1,6 +1,9 @@
-macro "3_3" {
+macro "mask maker" {
 
-path = "C:/FASTAI/MPP8/new_processed_train_data/" //set path
+Dialog.create("set Path");
+Dialog.addString("Title:", "set output folder");
+Dialog.show();
+path = Dialog.getString();
 
 output_folder = path + "images/"
 mask_folder = path + "masks/"
@@ -29,5 +32,4 @@ saveAs("PNG", mask_folder + mask_name);
 roiManager("Delete");
 selectWindow(mask_name);
 close();
-
 }
